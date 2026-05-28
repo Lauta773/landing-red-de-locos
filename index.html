@@ -3,22 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Red de Locos | Info por WhatsApp</title>
-  <meta name="description" content="Pedí información por WhatsApp para trabajar como administrador o cajer0 independiente." />
+  <title>Red de Locos | Información por WhatsApp</title>
+  <meta name="description" content="Solicitá información por WhatsApp para conocer la modalidad independiente." />
 
-  <!-- META PIXEL: pegá tu código del pixel acá arriba del cierre de head si lo necesitás -->
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '728560140264007');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=728560140264007&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- End Meta Pixel Code -->
 
   <style>
     :root {
-      --fondo: #08030d;
+      --bg-1: #050108;
+      --bg-2: #12051a;
       --violeta: #8e24ff;
-      --violeta-claro: #c05cff;
+      --violeta-2: #c05cff;
       --dorado: #f6b93b;
-      --dorado-claro: #ffd36b;
+      --dorado-2: #ffd36b;
       --blanco: #fff8ff;
-      --gris: #d9cbe4;
+      --gris: #d9cce4;
+      --gris-2: rgba(255, 248, 255, 0.68);
       --verde: #25d366;
-      --verde-oscuro: #18b956;
+      --verde-2: #18b956;
     }
 
     * {
@@ -32,34 +52,34 @@
       font-family: Arial, Helvetica, sans-serif;
       color: var(--blanco);
       background:
-        radial-gradient(circle at 20% 12%, rgba(142, 36, 255, 0.42), transparent 34%),
-        radial-gradient(circle at 82% 18%, rgba(246, 185, 59, 0.22), transparent 28%),
-        linear-gradient(145deg, #050107 0%, #13061d 48%, #08030d 100%);
+        radial-gradient(circle at 18% 10%, rgba(142, 36, 255, 0.40), transparent 34%),
+        radial-gradient(circle at 82% 16%, rgba(246, 185, 59, 0.18), transparent 28%),
+        linear-gradient(145deg, var(--bg-1) 0%, var(--bg-2) 52%, #06010a 100%);
       display: grid;
       place-items: center;
-      padding: 22px;
+      padding: 20px;
       overflow-x: hidden;
     }
 
-    .box {
-      width: min(460px, 100%);
-      text-align: center;
-      padding: 28px 22px 24px;
-      border-radius: 30px;
-      border: 1px solid rgba(255, 211, 107, 0.24);
+    .card {
+      width: min(470px, 100%);
       background: rgba(255, 255, 255, 0.075);
-      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
-      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 211, 107, 0.22);
+      border-radius: 28px;
+      padding: 28px 22px 24px;
+      text-align: center;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.42);
+      backdrop-filter: blur(16px);
     }
 
-    .box::before {
+    .card::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 50% 0%, rgba(255, 211, 107, 0.16), transparent 42%);
       pointer-events: none;
+      background: radial-gradient(circle at 50% 0%, rgba(255, 211, 107, 0.12), transparent 40%);
     }
 
     .content {
@@ -72,38 +92,46 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      margin-bottom: 18px;
       font-size: 13px;
       font-weight: 900;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--dorado-claro);
+      color: var(--dorado-2);
+      margin-bottom: 16px;
     }
 
     .brand-icon {
       width: 34px;
       height: 34px;
-      border-radius: 13px;
+      border-radius: 12px;
       background:
         radial-gradient(circle at 30% 22%, #fff3a6, transparent 24%),
         linear-gradient(135deg, var(--dorado), var(--violeta));
-      box-shadow: 0 0 28px rgba(192, 92, 255, 0.48);
+      box-shadow: 0 0 28px rgba(192, 92, 255, 0.42);
     }
 
-    .lion {
-      width: min(230px, 78%);
-      margin: 0 auto 10px;
-      filter: drop-shadow(0 24px 28px rgba(0,0,0,0.38));
+    .lion-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 12px;
     }
 
-    .lion img {
+    .lion-box {
+      width: 150px;
+      max-width: 50%;
+      filter: drop-shadow(0 18px 24px rgba(0,0,0,0.38));
+    }
+
+    .lion-box img {
       width: 100%;
       display: block;
+      object-fit: contain;
     }
 
     .lion-fallback {
-      font-size: 96px;
-      margin: 14px 0 8px;
+      font-size: 72px;
+      line-height: 1;
     }
 
     .badge {
@@ -112,53 +140,69 @@
       justify-content: center;
       padding: 8px 12px;
       border-radius: 999px;
-      margin-bottom: 15px;
+      margin-bottom: 16px;
       font-size: 12px;
       font-weight: 800;
-      color: var(--dorado-claro);
-      background: rgba(255, 211, 107, 0.10);
-      border: 1px solid rgba(255, 211, 107, 0.22);
+      color: var(--dorado-2);
+      background: rgba(255, 211, 107, 0.09);
+      border: 1px solid rgba(255, 211, 107, 0.20);
     }
 
     h1 {
-      font-size: clamp(31px, 9vw, 43px);
-      line-height: 0.98;
-      letter-spacing: -0.055em;
-      margin-bottom: 13px;
+      font-size: clamp(29px, 8vw, 42px);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      margin-bottom: 12px;
     }
 
     h1 span {
       color: transparent;
-      background: linear-gradient(90deg, var(--dorado-claro), var(--violeta-claro));
+      background: linear-gradient(90deg, var(--dorado-2), var(--violeta-2));
       -webkit-background-clip: text;
       background-clip: text;
     }
 
-    p {
+    .desc {
       color: var(--gris);
-      font-size: 16px;
-      line-height: 1.45;
-      margin: 0 auto 20px;
+      font-size: 15.5px;
+      line-height: 1.5;
       max-width: 360px;
+      margin: 0 auto 18px;
+    }
+
+    .mini-text {
+      color: var(--gris-2);
+      font-size: 13px;
+      line-height: 1.45;
+      margin-bottom: 20px;
     }
 
     .btn-whatsapp {
       width: 100%;
-      min-height: 62px;
-      border-radius: 19px;
+      min-height: 60px;
+      border-radius: 18px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
       text-decoration: none;
       color: #031409;
-      background: linear-gradient(135deg, #2ef37a, var(--verde-oscuro));
-      font-size: 18px;
+      background: linear-gradient(135deg, #2ef37a, var(--verde-2));
+      font-size: 17px;
       font-weight: 950;
-      box-shadow: 0 18px 42px rgba(37, 211, 102, 0.36), 0 0 0 5px rgba(37, 211, 102, 0.12);
+      box-shadow:
+        0 18px 42px rgba(37, 211, 102, 0.34),
+        0 0 0 5px rgba(37, 211, 102, 0.10);
       position: relative;
       overflow: hidden;
-      animation: pulse 1.8s infinite;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        0 22px 48px rgba(37, 211, 102, 0.42),
+        0 0 0 6px rgba(37, 211, 102, 0.12);
     }
 
     .btn-whatsapp::after {
@@ -166,7 +210,7 @@
       position: absolute;
       inset: -90% auto -90% -40%;
       width: 55%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.48), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
       transform: rotate(18deg);
       animation: shine 2.8s infinite;
     }
@@ -176,15 +220,10 @@
       55%, 100% { left: 130%; }
     }
 
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.018); }
-    }
-
-    .small {
-      margin: 14px auto 0;
+    .footer-note {
+      margin-top: 14px;
       font-size: 12px;
-      color: rgba(255, 248, 255, 0.62);
+      color: rgba(255, 248, 255, 0.58);
       line-height: 1.35;
     }
 
@@ -193,52 +232,82 @@
         padding: 14px;
       }
 
-      .box {
-        padding: 24px 18px 22px;
-        border-radius: 26px;
+      .card {
+        padding: 24px 18px 20px;
+        border-radius: 24px;
       }
 
-      .lion {
-        width: min(210px, 82%);
+      .lion-box {
+        width: 135px;
+        max-width: 48%;
+      }
+
+      h1 {
+        font-size: 31px;
+      }
+
+      .desc {
+        font-size: 15px;
       }
     }
   </style>
 </head>
 <body>
-  <main class="box">
+  <main class="card">
     <div class="content">
       <div class="brand">
         <div class="brand-icon"></div>
         RED DE LOCOS
       </div>
 
-      <div class="lion" id="lionBox">
-        <!-- Subí tu imagen del león a la misma carpeta y nombrala leon.png -->
-        <img src="leon.png" alt="León Red de Locos" onerror="document.getElementById('lionBox').innerHTML='<div class=\'lion-fallback\'>🦁</div>'" />
+      <div class="lion-wrap">
+        <div class="lion-box" id="lionBox">
+          <!-- Subí tu imagen en la misma carpeta con el nombre leon.png -->
+          <img
+            src="leon.png"
+            alt="León Red de Locos"
+            onerror="document.getElementById('lionBox').innerHTML='<div class=\'lion-fallback\'>🦁</div>'"
+          />
+        </div>
       </div>
 
-      <div class="badge">Administradores y cajer0s independientes</div>
+      <div class="badge">Modalidad independiente</div>
 
-      <h1>Pedí la info por <span>WhatsApp</span></h1>
+      <h1>Solicitá información por <span>WhatsApp</span></h1>
 
-      <p>Te pasamos la modalidad completa, porcentajes y pasos para empezar.</p>
+      <p class="desc">
+        Conocé la propuesta, la modalidad de trabajo y los pasos para comenzar.
+        Te enviamos toda la información de forma directa por WhatsApp.
+      </p>
 
-      <a class="btn-whatsapp" id="whatsappBtn" href="#" target="_blank" rel="noopener">
-        💬 Quiero información
+      <p class="mini-text">
+        Atención personalizada · Respuesta directa · Información clara
+      </p>
+
+      <a class="btn-whatsapp" id="whatsappBtn" href="#" target="_blank" rel="noopener" onclick="trackWhatsappLead()">
+        💬 Solicitar información
       </a>
 
-      <div class="small">Tocá el botón y te respondemos directo por WhatsApp.</div>
+      <div class="footer-note">
+        Tocá el botón y te respondemos directamente por WhatsApp.
+      </div>
     </div>
   </main>
 
   <script>
-    // CAMBIÁ ESTE NÚMERO POR EL TUYO. Formato: país + característica + número, sin + ni espacios.
     const whatsappNumber = "5493518582574";
-
     const message = "Hola, quiero información sobre la modalidad independiente.";
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
     document.getElementById("whatsappBtn").href = whatsappLink;
+
+    function trackWhatsappLead() {
+      if (typeof fbq !== "undefined") {
+        fbq("track", "Lead", {
+          content_name: "modalidad_independiente"
+        });
+      }
+    }
   </script>
 </body>
 </html>
