@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Red de Locos | Info por WhatsApp</title>
+  <meta name="description" content="Pedí información por WhatsApp para trabajar como administrador o cajer0 independiente." />
+
+  <!-- META PIXEL: pegá tu código del pixel acá arriba del cierre de head si lo necesitás -->
+
+  <style>
+    :root {
+      --fondo: #08030d;
+      --violeta: #8e24ff;
+      --violeta-claro: #c05cff;
+      --dorado: #f6b93b;
+      --dorado-claro: #ffd36b;
+      --blanco: #fff8ff;
+      --gris: #d9cbe4;
+      --verde: #25d366;
+      --verde-oscuro: #18b956;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--blanco);
+      background:
+        radial-gradient(circle at 20% 12%, rgba(142, 36, 255, 0.42), transparent 34%),
+        radial-gradient(circle at 82% 18%, rgba(246, 185, 59, 0.22), transparent 28%),
+        linear-gradient(145deg, #050107 0%, #13061d 48%, #08030d 100%);
+      display: grid;
+      place-items: center;
+      padding: 22px;
+      overflow-x: hidden;
+    }
+
+    .box {
+      width: min(460px, 100%);
+      text-align: center;
+      padding: 28px 22px 24px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 211, 107, 0.24);
+      background: rgba(255, 255, 255, 0.075);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+      backdrop-filter: blur(16px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(255, 211, 107, 0.16), transparent 42%);
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--dorado-claro);
+    }
+
+    .brand-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 13px;
+      background:
+        radial-gradient(circle at 30% 22%, #fff3a6, transparent 24%),
+        linear-gradient(135deg, var(--dorado), var(--violeta));
+      box-shadow: 0 0 28px rgba(192, 92, 255, 0.48);
+    }
+
+    .lion {
+      width: min(230px, 78%);
+      margin: 0 auto 10px;
+      filter: drop-shadow(0 24px 28px rgba(0,0,0,0.38));
+    }
+
+    .lion img {
+      width: 100%;
+      display: block;
+    }
+
+    .lion-fallback {
+      font-size: 96px;
+      margin: 14px 0 8px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      margin-bottom: 15px;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--dorado-claro);
+      background: rgba(255, 211, 107, 0.10);
+      border: 1px solid rgba(255, 211, 107, 0.22);
+    }
+
+    h1 {
+      font-size: clamp(31px, 9vw, 43px);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      margin-bottom: 13px;
+    }
+
+    h1 span {
+      color: transparent;
+      background: linear-gradient(90deg, var(--dorado-claro), var(--violeta-claro));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    p {
+      color: var(--gris);
+      font-size: 16px;
+      line-height: 1.45;
+      margin: 0 auto 20px;
+      max-width: 360px;
+    }
+
+    .btn-whatsapp {
+      width: 100%;
+      min-height: 62px;
+      border-radius: 19px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #031409;
+      background: linear-gradient(135deg, #2ef37a, var(--verde-oscuro));
+      font-size: 18px;
+      font-weight: 950;
+      box-shadow: 0 18px 42px rgba(37, 211, 102, 0.36), 0 0 0 5px rgba(37, 211, 102, 0.12);
+      position: relative;
+      overflow: hidden;
+      animation: pulse 1.8s infinite;
+    }
+
+    .btn-whatsapp::after {
+      content: "";
+      position: absolute;
+      inset: -90% auto -90% -40%;
+      width: 55%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.48), transparent);
+      transform: rotate(18deg);
+      animation: shine 2.8s infinite;
+    }
+
+    @keyframes shine {
+      0% { left: -70%; }
+      55%, 100% { left: 130%; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.018); }
+    }
+
+    .small {
+      margin: 14px auto 0;
+      font-size: 12px;
+      color: rgba(255, 248, 255, 0.62);
+      line-height: 1.35;
+    }
+
+    @media (max-width: 420px) {
+      body {
+        padding: 14px;
+      }
+
+      .box {
+        padding: 24px 18px 22px;
+        border-radius: 26px;
+      }
+
+      .lion {
+        width: min(210px, 82%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="box">
+    <div class="content">
+      <div class="brand">
+        <div class="brand-icon"></div>
+        RED DE LOCOS
+      </div>
+
+      <div class="lion" id="lionBox">
+        <!-- Subí tu imagen del león a la misma carpeta y nombrala leon.png -->
+        <img src="leon.png" alt="León Red de Locos" onerror="document.getElementById('lionBox').innerHTML='<div class=\'lion-fallback\'>🦁</div>'" />
+      </div>
+
+      <div class="badge">Administradores y cajer0s independientes</div>
+
+      <h1>Pedí la info por <span>WhatsApp</span></h1>
+
+      <p>Te pasamos la modalidad completa, porcentajes y pasos para empezar.</p>
+
+      <a class="btn-whatsapp" id="whatsappBtn" href="#" target="_blank" rel="noopener">
+        💬 Quiero información
+      </a>
+
+      <div class="small">Tocá el botón y te respondemos directo por WhatsApp.</div>
+    </div>
+  </main>
+
+  <script>
+    // CAMBIÁ ESTE NÚMERO POR EL TUYO. Formato: país + característica + número, sin + ni espacios.
+    const whatsappNumber = "549XXXXXXXXXX";
+
+    const message = "Hola, quiero información para trabajar como administrador o cajer0 independiente.";
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    document.getElementById("whatsappBtn").href = whatsappLink;
+  </script>
+</body>
+</html>
